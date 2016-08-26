@@ -22,19 +22,12 @@ private Realm realm;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //Transition
-        //Transition mFadeTransition =
-                //TransitionInflater.from(this).
-                     //   inflateTransition(R.transition.activity_slide);
-
+        //set Transitions
+getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
         realm = Realm.getDefaultInstance();
-       // rootLayout =(LinearLayout)findViewById(R.id.rootLayout);
-       // TextView t=new TextView(this);
-       // t.setText("12354674897");
-       // rootLayout.addView(t);
 
-
+//https://github.com/baoyongzhang/SwipeMenuListView
+//https://github.com/wasabeef/awesome-android-ui
     }
 
 
@@ -69,7 +62,7 @@ private Realm realm;
     public boolean onOptionsItemSelected(MenuItem item) {
 
        startActivity(new Intent(getApplicationContext(),AddNote.class));
-
+        overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
         return super.onOptionsItemSelected(item);
     }
 

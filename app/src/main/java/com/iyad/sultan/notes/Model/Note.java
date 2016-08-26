@@ -6,10 +6,11 @@ import io.realm.RealmObject;
 
 /**
  * Created by Administrator on 8/23/2016.
- */
+*/
 public class Note extends RealmObject {
     private String title;
     private String description;
     private Date Date ;
     private Boolean isFavorite;
+    private int noteColor; /** 1 2 3 4 5 */
 }
