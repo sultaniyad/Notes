@@ -1,0 +1,9 @@
+<resources>
+
+    <string name="app_name">ملاحظات</string>
+
+    <string name="addNote">اضافة</string>
+    <string name="deleteNote">ح>ف</string>
+    <string name="back">رجوع</string>
+
+</resources>
