@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="88dp"
+    android:paddingTop="8dp"
+    android:id="@+id/liner_row_root">
+
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/img_fav"
+        android:paddingLeft="16dp"
+        android:paddingTop="8dp"
+        android:src="@drawable/ic_favorite_border_black_36dp"
+
+        android:gravity="center"
+        android:layout_margin="16dp"
+        android:layout_centerVertical="true"
+       />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:textSize="16sp"
+        android:text="New Text"
+        android:id="@+id/primary_text"
+
+        android:layout_toRightOf="@id/img_fav"
+        android:paddingTop="16dp"
+        android:layout_alignTop="@id/img_fav"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:textSize="14sp"
+        android:text="scondary text"
+        android:id="@+id/scondary_text"
+
+        android:layout_toRightOf="@id/img_fav"
+        android:layout_below="@+id/primary_text"
+        android:paddingBottom="20dp"
+
+      />
+
+
+
+
+</RelativeLayout>
