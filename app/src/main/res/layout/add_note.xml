@@ -1,13 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
 
-    android:background="#d28a8a">
+    >
 
 
-    <TextView
+    <EditText
+        android:id="@+id/receivers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:gravity="top"
+        android:hint="عنوان"
+        android:inputType="textMultiLine"
+        android:maxLength="50"
+        android:padding="20sp" />
+
+    <EditText
+        android:id="@+id/new_message_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/Description"
+        android:layout_weight="1"
+        android:gravity="top"
+        android:hint="الملاحظة"
+        android:inputType="textMultiLine"
+        android:padding="20sp" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center|center_horizontal">
+
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/color_lightblue_btn"
+             />
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/color_purple_btn"/>
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/color_cyan_btn"/>
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/color_lightgreen_btn"/>
+
+        <RadioButton
+        android:id="@+id/radioButton5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="add note"/>
+            android:background="@drawable/color_orange_btn"
+        />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/insertNote"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:onClick="InsertNote"
+        android:text="Insert Note " />
+
 </LinearLayout>

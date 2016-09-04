@@ -15,15 +15,16 @@ import android.widget.TextView;
 import io.realm.Realm;
 
 public class MainActivity extends AppCompatActivity {
-private Realm realm;
+    private Realm realm;
     private LinearLayout rootLayout;
     private RelativeLayout childLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //set Transitions
-getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
+        getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
         realm = Realm.getDefaultInstance();
 
 //https://github.com/baoyongzhang/SwipeMenuListView
@@ -38,16 +39,15 @@ getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
     }
 
 
-
-   private void addNote(View v){
-
-    }
-
-    private void  deleteNote(){
+    private void addNote(View v) {
 
     }
 
-    private void refresh(){
+    private void deleteNote() {
+
+    }
+
+    private void refresh() {
 
     }
 
@@ -61,7 +61,7 @@ getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-       startActivity(new Intent(getApplicationContext(),AddNote.class));
+        startActivity(new Intent(getApplicationContext(), AddNote.class));
         overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
         return super.onOptionsItemSelected(item);
     }
