@@ -11,7 +11,7 @@ public class Note extends RealmObject {
 
     private String title;
     private String description;
-    private Date Date;
+    private String Date;
     private Boolean isFavorite;
     private int noteColor;
 
@@ -34,11 +34,11 @@ public class Note extends RealmObject {
         this.description = description;
     }
 
-    public java.util.Date getDate() {
+    public String getDate() {
         return Date;
     }
 
-    public void setDate(java.util.Date date) {
+    public void setDate(String date) {
         Date = date;
     }
 

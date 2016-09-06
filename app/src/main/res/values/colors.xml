@@ -12,7 +12,8 @@
     <color name="Cyan">#00BCD4</color>
     <color name="LightBlue">#2196F3</color>
     <color name="Orange">#FFB74D</color>
-    <color name="LightGreen">#4CAF50</color>
+    <color name="LightGreen">#4caf50</color>
     <color name="Purple">#9C27B0</color>
+    <color name="White">#ffffff</color>
 
 </resources>

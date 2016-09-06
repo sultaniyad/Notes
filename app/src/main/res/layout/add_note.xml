@@ -8,60 +8,62 @@
 
 
     <EditText
-        android:id="@+id/receivers"
+        android:id="@+id/Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar"
-        android:gravity="top"
         android:hint="عنوان"
-        android:inputType="textMultiLine"
-        android:maxLength="50"
-        android:padding="20sp" />
+        android:maxLength="30"
+        android:textAlignment="textStart"
+        android:padding="20sp"
+        android:inputType="text"
+        android:maxLines="1"
+        android:lines="1" />
 
     <EditText
-        android:id="@+id/new_message_text"
+        android:id="@+id/des"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/Description"
+        android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="top"
         android:hint="الملاحظة"
-        android:inputType="textMultiLine"
-        android:padding="20sp" />
+        android:textAlignment="textStart"
+        android:padding="20sp"
+        android:inputType="textMultiLine" />
 
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:id="@+id/RG"
         android:gravity="center|center_horizontal">
 
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/lightBlue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/color_lightblue_btn"
              />
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/Purple"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/color_purple_btn"/>
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/Cyan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/color_cyan_btn"/>
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/lightGreen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/color_lightgreen_btn"/>
 
         <RadioButton
-        android:id="@+id/radioButton5"
+        android:id="@+id/Orange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
             android:background="@drawable/color_orange_btn"

@@ -1,23 +1,27 @@
 package com.iyad.sultan.notes;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.transition.Transition;
-import android.transition.TransitionInflater;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.widget.Toast;
+
+import com.iyad.sultan.notes.Controller.NoteAdapter;
+import com.iyad.sultan.notes.Model.Note;
 
 import io.realm.Realm;
+import io.realm.RealmQuery;
+import io.realm.RealmResults;
 
 public class MainActivity extends AppCompatActivity {
     private Realm realm;
-    private LinearLayout rootLayout;
-    private RelativeLayout childLayout;
+    private RealmQuery<Note> query;
+    private RealmResults<Note> result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +30,16 @@ public class MainActivity extends AppCompatActivity {
         //set Transitions
         getWindow().getDecorView().setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
         realm = Realm.getDefaultInstance();
+        query = realm.where(Note.class);
+        result = query.findAll();
 
-//https://github.com/baoyongzhang/SwipeMenuListView
-//https://github.com/wasabeef/awesome-android-ui
+
+        RecyclerView rec = (RecyclerView) findViewById(R.id.recycler_note);
+         rec.setAdapter(new NoteAdapter(result));
+         rec.setItemAnimator(new DefaultItemAnimator());
+         rec.setLayoutManager(new LinearLayoutManager(this));
+
+
     }
 
 
@@ -38,10 +49,6 @@ public class MainActivity extends AppCompatActivity {
         realm.close();
     }
 
-
-    private void addNote(View v) {
-
-    }
 
     private void deleteNote() {
 
