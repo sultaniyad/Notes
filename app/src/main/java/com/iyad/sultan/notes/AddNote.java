@@ -77,7 +77,7 @@ public class AddNote extends AppCompatActivity {
         }
         //get Note Title and Description and Time ;
         c = Calendar.getInstance();
-        df = new SimpleDateFormat("dd-MMM", new Locale("ar"));
+        df = new SimpleDateFormat("yy/dd/MM", new Locale("ar"));
         date = df.format(c.getTime());
 
 
