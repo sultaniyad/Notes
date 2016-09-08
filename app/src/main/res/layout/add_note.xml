@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -12,12 +13,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="عنوان"
-        android:maxLength="30"
-        android:textAlignment="textStart"
-        android:padding="20sp"
         android:inputType="text"
+        android:lines="1"
+        android:maxLength="30"
         android:maxLines="1"
-        android:lines="1" />
+        android:padding="20sp"
+        android:textAlignment="textStart" />
 
     <EditText
         android:id="@+id/des"
@@ -25,53 +26,60 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:hint="الملاحظة"
-        android:textAlignment="textStart"
+        android:inputType="textMultiLine"
         android:padding="20sp"
-        android:inputType="textMultiLine" />
+        android:textAlignment="textStart" />
 
     <RadioGroup
+        android:id="@+id/RG"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/RG"
-        android:gravity="center|center_horizontal">
+        android:gravity="center|center_horizontal"
+        android:orientation="horizontal">
 
 
-        <RadioButton
+        <android.support.v7.widget.AppCompatRadioButton
             android:id="@+id/lightBlue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-           />
+            app:buttonTint="@color/gray"
+            />
 
-        <RadioButton
+        <android.support.v7.widget.AppCompatRadioButton
             android:id="@+id/Purple"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <RadioButton
+            android:layout_height="wrap_content"
+            app:buttonTint="@color/green"/>
+
+        <android.support.v7.widget.AppCompatRadioButton
             android:id="@+id/Cyan"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            app:buttonTint="@color/Purple"/>
 
-        <RadioButton
+        <android.support.v7.widget.AppCompatRadioButton
             android:id="@+id/lightGreen"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            app:buttonTint="@color/light_blue"/>
 
-        <RadioButton
-        android:id="@+id/Orange"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/Orange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:buttonTint="@color/pink"/>
+
+
     </RadioGroup>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="left|center_horizontal"
         android:layout_margin="16dp"
         android:clickable="true"
         android:onClick="InsertNote"
-        android:src="@drawable/ic_favorite_white_36dp"
-        android:layout_gravity="left|center_horizontal" />
+        android:src="@drawable/ic_favorite_white_36dp" />
 
 </LinearLayout>

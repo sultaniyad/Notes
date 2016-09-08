@@ -47,19 +47,19 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
 
         switch (note.getNoteColor()) {
 
-            case 1:
+            case 5:
                 holder.itemView.setBackgroundColor(Color.rgb(156, 39, 176));
                 break;
-            case 2:
+            case 4:
                 holder.itemView.setBackgroundColor(Color.rgb(76,150,80));
                 break;
             case 3:
                 holder.itemView.setBackgroundColor(Color.rgb(96, 125, 139));
                 break;
-            case 4:
+            case 2:
                 holder.itemView.setBackgroundColor(Color.rgb(0, 188, 212));
                 break;
-            case 5:
+            case 1:
                 holder.itemView.setBackgroundColor(Color.rgb(240, 98, 146));
                 break;
 
