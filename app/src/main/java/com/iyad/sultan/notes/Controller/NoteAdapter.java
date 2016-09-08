@@ -26,6 +26,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
         NoteItems = noteList;
         // http://stackoverflow.com/questions/30398247/how-to-filter-a-recyclerview-with-a-searchview
 
+
     }
 
 

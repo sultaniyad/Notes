@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
          rec.setItemAnimator(new DefaultItemAnimator());
          rec.setLayoutManager(new LinearLayoutManager(this));
 
+
+//http://stackoverflow.com/questions/30398247/how-to-filter-a-recyclerview-with-a-searchview
 
     }
 

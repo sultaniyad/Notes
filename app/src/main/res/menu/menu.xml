@@ -3,7 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-        <item android:id="@+id/addNote" android:title="@string/addNote" android:icon="@drawable/ic_create_white_36dp"  app:showAsAction="ifRoom"></item>
+        <!-- "Mark Favorite", should appear as action button if possible -->
+        <item
+            android:id="@+id/action_favorite"
+            android:icon="@android:drawable/ic_menu_search"
+
+            app:showAsAction="ifRoom"/>
+
+        <!-- Settings, should always be in the overflow -->
+        <item android:id="@+id/addNote"
+            android:title="@string/addNote"
+            android:icon="@drawable/ic_create_white_36dp"
+            app:showAsAction="ifRoom"/>
 
 
 </menu>
