@@ -24,7 +24,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:gravity="top"
         android:hint="الملاحظة"
         android:textAlignment="textStart"
         android:padding="20sp"
@@ -42,40 +41,37 @@
             android:id="@+id/lightBlue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/color_lightblue_btn"
-             />
+           />
 
         <RadioButton
             android:id="@+id/Purple"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/color_purple_btn"/>
+            android:layout_height="wrap_content"/>
         <RadioButton
             android:id="@+id/Cyan"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/color_cyan_btn"/>
+            android:layout_height="wrap_content"/>
 
         <RadioButton
             android:id="@+id/lightGreen"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/color_lightgreen_btn"/>
+            android:layout_height="wrap_content"/>
 
         <RadioButton
         android:id="@+id/Orange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-            android:background="@drawable/color_orange_btn"
         />
     </RadioGroup>
 
-    <Button
-        android:id="@+id/insertNote"
-        android:layout_width="fill_parent"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        android:layout_margin="16dp"
+        android:clickable="true"
         android:onClick="InsertNote"
-        android:text="Insert Note " />
+        android:src="@drawable/ic_favorite_white_36dp"
+        android:layout_gravity="left|center_horizontal" />
 
 </LinearLayout>

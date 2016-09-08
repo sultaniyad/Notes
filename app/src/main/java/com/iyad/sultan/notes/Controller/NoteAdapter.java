@@ -41,7 +41,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
 
         final Note note = NoteItems.get(position);
         holder.primaryText.setText(note.getTitle());
-        holder.secondaryText.setText(note.getDescription());
+        holder.secondaryText.setText(note.getDescription().trim());
 
         switch (note.getNoteColor()) {
 
@@ -49,7 +49,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
                 holder.itemView.setBackgroundColor(Color.rgb(156, 39, 176));
                 break;
             case 2:
-                holder.itemView.setBackgroundColor(Color.rgb(255,235,59));
+                holder.itemView.setBackgroundColor(Color.rgb(76,150,80));
                 break;
             case 3:
                 holder.itemView.setBackgroundColor(Color.rgb(96, 125, 139));
