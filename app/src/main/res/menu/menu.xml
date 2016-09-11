@@ -8,7 +8,7 @@
             android:id="@+id/action_favorite"
             android:icon="@android:drawable/ic_menu_search"
 
-            app:showAsAction="ifRoom"/>
+            app:showAsAction="collapseActionView"/>
 
         <!-- Settings, should always be in the overflow -->
         <item android:id="@+id/addNote"

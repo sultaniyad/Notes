@@ -96,6 +96,7 @@ public class AddNote extends AppCompatActivity {
                 note.setDescription(description_P);
                 note.setNoteColor(color_p);
                 note.setDate(date_P);
+                note.setFavorite(false);
 
             }
         }, new Realm.Transaction.OnSuccess() {

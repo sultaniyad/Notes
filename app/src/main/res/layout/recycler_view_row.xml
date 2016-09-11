@@ -35,7 +35,10 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
             android:textSize="16sp"
-             />
+            android:lines="1"
+            android:ellipsize="end"
+
+            />
 
         <TextView
             android:id="@+id/scondary_text"
@@ -43,8 +46,9 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
             android:textSize="14sp"
-            android:text="تفاصيل/" />
-
+            android:text="تفاصيل/"
+            android:ellipsize="end"
+            android:maxLines="1"/>
     </LinearLayout>
 
     <ImageView
@@ -55,6 +59,7 @@
         android:layout_centerVertical="true"
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
-        android:src="@drawable/ic_favorite_black_36dp" />
+        android:src="@drawable/ic_favorite_white_36dp"
+        android:clickable="true" />
 
 </RelativeLayout>
