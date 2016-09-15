@@ -48,6 +48,7 @@ public class reader extends AppCompatActivity {
     }
 
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.back_and_delete, menu);
