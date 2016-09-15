@@ -121,7 +121,7 @@ public class AddNote extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        finish();
         overridePendingTransition(R.anim.pull_in_right, R.anim.push_out_left);
         return super.onOptionsItemSelected(item);
     }

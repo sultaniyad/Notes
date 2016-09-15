@@ -11,6 +11,7 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 
 import com.iyad.sultan.notes.Controller.NoteAdapter;
@@ -25,12 +26,14 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.NoteC
     private RealmQuery<Note> query;
     private RealmResults<Note> result;
     NoteAdapter adapter;
+    int x= 0;
 
     //Keys
     private static final String TITLE="TITLE";
     private static final String DESCRIPTION ="DESCRIPTION";
     private static final String DATE = "DATE";
     private   Bundle bundle;
+    private RecyclerView rec;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +45,12 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.NoteC
         query = realm.where(Note.class);
         result = query.findAll();
         adapter = new NoteAdapter(result);
-
+        Toast.makeText(MainActivity.this, "Create", Toast.LENGTH_SHORT).show();
         //OnclickListener set
         adapter.setNoteClickBack(this);
 
         //RecyclerView and ItemTouchHelper
-        RecyclerView rec = (RecyclerView) findViewById(R.id.recycler_note);
+        rec = (RecyclerView) findViewById(R.id.recycler_note);
         rec.setAdapter(adapter);
         rec.setItemAnimator(new DefaultItemAnimator());
         rec.setLayoutManager(new LinearLayoutManager(this));
@@ -64,12 +67,14 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.NoteC
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        if(realm != null){
         realm.close();
+        realm = null;}
     }
 
 
     private void refresh() {
-
+     adapter.notifyDataSetChanged();
     }
 
 
@@ -86,6 +91,7 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.NoteC
         overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
         return super.onOptionsItemSelected(item);
     }
+
 
     private ItemTouchHelper.Callback createHelperCallback() {
         ItemTouchHelper.SimpleCallback simpleItemTouchCallback =
@@ -116,6 +122,7 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.NoteC
                 result.deleteFromRealm(p);
                 adapter.notifyItemRemoved(p);
 
+
             }
         });
 
@@ -138,5 +145,14 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.NoteC
         bundle.putString(DATE, result.get(position).getDate());
 
         startActivity(new Intent(getApplicationContext(),reader.class).putExtras(bundle));
+        overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(MainActivity.this, "Resume", Toast.LENGTH_SHORT).show();
+        adapter.notifyDataSetChanged();
+
     }
 }
