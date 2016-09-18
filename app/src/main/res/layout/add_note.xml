@@ -11,10 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="عنوان"
-        android:inputType="text"
-        android:maxLines="1"
+        android:inputType="textMultiLine"
+        android:maxLines="2"
+
         android:padding="20sp"
-        android:textAlignment="textStart" />
+        android:textAlignment="textStart"
+        android:maxLength="160"/>
 
     <EditText
         android:id="@+id/des"
@@ -24,7 +26,9 @@
         android:hint="الملاحظة"
         android:inputType="textMultiLine"
         android:padding="20sp"
-        android:textAlignment="textStart" />
+
+
+        android:gravity="start|center_horizontal|right" />
 
     <RadioGroup
         android:id="@+id/RG"
@@ -66,6 +70,8 @@
             app:buttonTint="@color/pink"/>
 
 
+
+
     </RadioGroup>
 
     <android.support.design.widget.FloatingActionButton
@@ -73,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="left|center_horizontal"
-        android:layout_margin="16dp"
+        android:layout_margin="10dp"
         android:clickable="true"
         android:onClick="InsertNote"
         android:src="@drawable/ic_favorite_white_36dp" />

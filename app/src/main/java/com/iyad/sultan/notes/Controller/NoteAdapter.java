@@ -6,6 +6,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -78,7 +80,7 @@ private NoteClickCallback noteClickCallback;
 
         }
         holder.dateText.setText(note.getDate());
-        holder.imgageFav.setImageResource(note.getFavorite() ? R.drawable.ic_favorite_black_36dp : R.drawable.ic_favorite_white_36dp);
+        holder.imgageFav.setImageResource(note.getFavorite() ? R.drawable.note_it_fav : R.drawable.note_it);
 
     }
 
@@ -115,7 +117,9 @@ private NoteClickCallback noteClickCallback;
         public void onClick(View view) {
             if (view.getId() == R.id.img_fav) {
                 currentStatus = NoteItems.get(getAdapterPosition()).getFavorite();
-                imgageFav.setImageResource(!currentStatus ? R.drawable.ic_favorite_black_36dp : R.drawable.ic_favorite_white_36dp);
+
+                imgageFav.setImageResource(!currentStatus ? R.drawable.note_it_fav : R.drawable.note_it);
+
                 updateFavStatus(getAdapterPosition(), !currentStatus);
 
             } else

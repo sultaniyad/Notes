@@ -59,7 +59,8 @@
         android:layout_centerVertical="true"
         android:layout_marginRight="16dp"
         android:layout_marginTop="16dp"
-        android:src="@drawable/ic_favorite_white_36dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/note_it"
         android:clickable="true" />
 
 </RelativeLayout>

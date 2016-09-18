@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -84,7 +86,10 @@ public class AddNote extends AppCompatActivity {
         if (color != 0 && title.getText().toString().length() > 0 && description.getText().toString().length() > 0)
             addNote(title.getText().toString(), description.getText().toString(), color, date);
         else
-            Toast.makeText(getApplicationContext(), "تأد من كتابة العنوان و الملاجظة وأختيار الون", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "تأكد من كتابة العنوان و الملاحظة وأختيار اللون", Toast.LENGTH_SHORT).show();
+
+
+
     }
 
     void addNote(final String title_P, final String description_P, final int color_p, final String date_P) {
@@ -102,12 +107,12 @@ public class AddNote extends AppCompatActivity {
         }, new Realm.Transaction.OnSuccess() {
             @Override
             public void onSuccess() {
-                Toast.makeText(getApplicationContext(), "onSuccess", Toast.LENGTH_SHORT).show();
+                finish();
             }
         }, new Realm.Transaction.OnError() {
             @Override
             public void onError(Throwable error) {
-                Toast.makeText(getApplicationContext(), "OnError", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "تأكد ممن وجود مساحة كافية ع الذاكرة", Toast.LENGTH_SHORT).show();
             }
         });
     }

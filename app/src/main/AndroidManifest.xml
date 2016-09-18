@@ -16,8 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".reader" android:noHistory="true"></activity>
-        <activity android:name=".AddNote" android:noHistory="true"></activity>
+        <activity android:name=".reader" android:noHistory="false"></activity>
+        <activity android:name=".AddNote" android:noHistory="false"></activity>
     </application>
 
 </manifest>
