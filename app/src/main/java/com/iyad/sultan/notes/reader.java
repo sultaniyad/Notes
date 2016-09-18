@@ -1,11 +1,12 @@
 package com.iyad.sultan.notes;
 
 import android.content.Intent;
-import android.net.Uri;
+
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+
 import android.support.v7.app.AppCompatActivity;
-import android.text.InputType;
+
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,6 +40,7 @@ public class reader extends AppCompatActivity {
     private ImageView twitterImg;
     private ImageView saveNeweChangeImg;
 
+
     private TextView title;
     private TextView textView_des;
     private TextView date;
@@ -54,7 +56,7 @@ public class reader extends AppCompatActivity {
 
         public void noteDeleleteClicked(int position);
 
-        public void updateNoteClicked(int position,String tit, String des);
+        public void updateNoteClicked(int position, String tit, String des);
     }
 
     public static void setNoteonDeleteClicked(OnNoteDeleteClicked noteDelete) {
@@ -182,16 +184,17 @@ public class reader extends AppCompatActivity {
     public void TextViewClicked(View v) {
 
         switcher.showNext(); //or switcher.showPrevious();
-//get Text and hide all menu buttons
+        //get Text and hide all menu buttons
         editText_des.setText(textView_des.getText());
+
         hide_all_meun_bar();
 
     }
 
     //click save new Change
     public void update_note(View v) {
-        // onNoteDeleteClicked.updateNote(this.position,editText_des.getText().toString());
-        Toast.makeText(reader.this, "" + editText_des.getText().toString(), Toast.LENGTH_SHORT).show();
+        onNoteDeleteClicked.updateNoteClicked(position, title.getText().toString(), editText_des.getText().toString());
+        Toast.makeText(reader.this, "تم الحفظ", Toast.LENGTH_SHORT).show();
     }
 
     public void hide_all_meun_bar() {

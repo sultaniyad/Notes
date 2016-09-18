@@ -10,7 +10,7 @@
 android:minHeight="50dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:background="#3002540a">
+        android:background="@drawable/bgc_tv_reader">
 
         <TextView
             android:id="@+id/text_title"
@@ -21,7 +21,8 @@ android:minHeight="50dp"
             android:textColor="@color/colorPrimaryDark"
             android:text="Title"
             android:padding="5dp"
-            android:layout_margin="5dp" />
+            android:layout_margin="5dp"
+           />
 
         <TextView
             android:id="@+id/text_date"
@@ -47,6 +48,7 @@ android:minHeight="50dp"
         android:textSize="16sp"
         android:textAlignment="textStart"
         android:orientation="vertical"
+
         android:layout_margin="5dp">
 
 
@@ -76,7 +78,7 @@ android:minHeight="50dp"
                     android:layout_height="match_parent"
                     android:inputType="textMultiLine"
                     android:textSize="14sp"
-
+android:background="@drawable/edittext_background"
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
                     android:paddingTop="5dp"

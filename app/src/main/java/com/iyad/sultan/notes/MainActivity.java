@@ -34,7 +34,8 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.NoteC
     private RealmResults<Note> result;
     private RealmAsyncTask  realmAsyncTask;
     NoteAdapter adapter;
-    int x= 0;
+    private  Note note;
+
 
     //Keys
     private static final String TITLE="TITLE";
@@ -122,7 +123,7 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.NoteC
                     public void onSwiped(final RecyclerView.ViewHolder viewHolder, int swipeDir) {
                         if(swipeDir == ItemTouchHelper.LEFT)
                          deleteNote(viewHolder.getAdapterPosition());
-                        else deleteNoteV2(viewHolder.getAdapterPosition());
+                        else ;
 
                     }
                     public void onChildDraw(Canvas c, RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
@@ -210,48 +211,18 @@ public class MainActivity extends AppCompatActivity implements NoteAdapter.NoteC
 
     }
 
-    void updateNote(int position,String tit,String des){
+    void updateNote(final int position_, final String tit,final String des){
 
-        realm.executeTransactionAsync(new Realm.Transaction() {
+        realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
-
-            }
-        }, new Realm.Transaction.OnSuccess() {
-            @Override
-            public void onSuccess() {
-
-            }
-        }, new Realm.Transaction.OnError() {
-            @Override
-            public void onError(Throwable error) {
+                note =  result.get(position_);
+                note.setTitle(tit);
+                note.setDescription(des);
 
             }
         });
     }
 
-    void deleteNoteV2(final int pop){
 
-        realmAsyncTask = realm.executeTransactionAsync(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-
-                //back thread
-                //result.deleteFromRealm(pop);
-               // adapter.notifyItemRemoved(pop);
-            }
-        }, new Realm.Transaction.OnSuccess() {
-            @Override
-            public void onSuccess() {
-               //on UI thread
-                Toast.makeText(getApplicationContext(), " Rتم الحدف", Toast.LENGTH_SHORT).show();
-            }
-        }, new Realm.Transaction.OnError() {
-            @Override
-            public void onError(Throwable error) {
-                //on UI Thread
-               error.printStackTrace();
-            }
-        });
-    }
 }

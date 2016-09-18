@@ -1,13 +1,13 @@
 package com.iyad.sultan.notes;
 
-import android.content.Intent;
+
 import android.os.Bundle;
+
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
+
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -54,6 +54,8 @@ public class AddNote extends AppCompatActivity {
         title = (EditText) findViewById(R.id.Title);
         description = (EditText) findViewById(R.id.des);
         rd = (RadioGroup) findViewById(R.id.RG);
+
+
 
     }
 
@@ -149,3 +151,9 @@ public class AddNote extends AppCompatActivity {
         super.onDestroy();
     }
 }
+
+
+
+//https://www.youtube.com/watch?v=OKWAjw2Bajg
+//http://stackoverflow.com/questions/2614545/animate-change-of-view-background-color-in-android
+//https://www.learn2crack.com/2016/02/custom-swipe-recyclerview.html
